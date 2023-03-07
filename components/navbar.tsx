@@ -2,34 +2,36 @@
 
 import Link from "next/link";
 import Image from 'next/image'
+import { usePathname } from "next/navigation";
 import React from "react";
 import logo from '../public/assets/logo.jpeg'
 import { Menu, Transition } from "@headlessui/react";
 import ThemeSwitcher from "./themeswitcher";
 
 export default function NavBar() {
+  const pathName = usePathname();
+
   return (
     <nav className="sticky w-full top-0 z-50 flex items-center justify-between flex-wrap px-6 pr-3 py-3 text-center">
       <div className="container flex items-center justify-between mx-auto">
         <Link href="/" className="flex items-center">
           <Image priority src={logo} alt="Logo" width={50} height={50} className="transition ease-linear hover:scale-105 rounded-lg" />
-          <span className="font-semibold text-xl sm:text-2xl whitespace-nowrap pl-3 transition ease-in-out hover:text-red-700 hover:scale-105 rounded-md">Evan Christopher</span>
+          <span className="font-semibold text-xl sm:text-2xl whitespace-nowrap pl-3 transition ease-in-out hover:text-red-700 hover:scale-105">
+            Evan Christopher
+          </span>
         </Link>
         
         <div className="flex flex-row">
         <div className="hidden items-center justify-center py-2 mr-6 sm:block sm:w-auto">
           <div className="text-md flex">
-            <Link href="/" className="block my-auto lg:inline-block transition ease-in-out hover:text-red-700 hover:scale-110 rounded-md mr-4">
-              Home
+            <Link href="/about" className={`${pathName == "/about" ? "bg-red-600 text-white hover:text-slate-50" : ""} block my-auto lg:inline-block transition ease-in-out hover:text-red-700 hover:scale-110 rounded-md mr-4`}>
+            <div className="p-1">About</div>
             </Link>
-            <Link href="/about" className="block my-auto lg:inline-block transition ease-in-out hover:text-red-700 hover:scale-110 rounded-md mr-4">
-              About
+            <Link href="/works" className={`${pathName == "/works" ? "bg-red-600 text-white hover:text-slate-50" : ""} block my-auto lg:inline-block transition ease-in-out hover:text-red-700 hover:scale-110 rounded-md mr-4`}>
+              <div className="p-1">Works</div>
             </Link>
-            <Link href="/work" className="block my-auto lg:inline-block transition ease-in-out hover:text-red-700 hover:scale-110 rounded-md mr-4">
-              Work
-            </Link>
-            <Link href="/contact" className="block my-auto lg:inline-block transition ease-in-out hover:text-red-700 hover:scale-110 rounded-md">
-              Contact
+            <Link href="/contact" className={`${pathName == "/contact" ? "bg-red-600 text-white hover:text-slate-50" : ""} block my-auto lg:inline-block transition ease-in-out hover:text-red-700 hover:scale-110 rounded-md mr-4`}>
+              <div className="p-1">Contact</div>
             </Link>
           </div>
         </div>
@@ -61,20 +63,11 @@ export default function NavBar() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items static className="text-xl bg-white text-zinc-800 absolute right-0 mt-2 w-56 origin-top-right divide-y divide-slate-100 dark:divide-slate-700 rounded-md shadow-lg ring-1 ring-black ring-opacity-10 focus:outline-none">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link href="/" className={`${
-                            active ? 'bg-red-700' : ''
-                          } group flex w-full items-center rounded-md p-4`}>
-                            Home
-                          </Link>
-                        )}
-                      </Menu.Item>
+                    <Menu.Items static className="text-lg bg-white text-zinc-800 absolute right-0 mt-2 w-56 origin-top-right divide-y divide-slate-100 dark:divide-slate-700 rounded-md shadow-lg ring-1 ring-black ring-opacity-10 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
                           <Link href="/about" className={`${
-                            active ? 'bg-red-700' : ''
+                            active || pathName == "/about" ? 'bg-red-700 text-white' : ''
                           } group flex w-full items-center rounded-md p-4`}>
                             About
                           </Link>
@@ -82,17 +75,17 @@ export default function NavBar() {
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <Link href="/work" className={`${
-                            active ? 'bg-red-700' : ''
+                          <Link href="/works" className={`${
+                            active || pathName == "/works" ? 'bg-red-700 text-white' : ''
                           } group flex w-full items-center rounded-md p-4`}>
-                            Work
+                            Works
                           </Link>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
                           <Link href="/contact" className={`${
-                            active ? 'bg-red-700' : ''
+                            active || pathName == "/contact" ? 'bg-red-700 text-white' : ''
                           } group flex w-full items-center rounded-md p-4`}>
                             Contact
                           </Link>
