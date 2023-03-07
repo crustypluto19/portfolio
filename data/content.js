@@ -3,6 +3,17 @@ const userData = {
     address: "Munich, Germany",
 }
 
+const socialLinks = {
+    github: "https://github.com/crustypluto19",
+    linkedin: "https://www.linkedin.com/in/christopher-evan/",
+    instagram: "https://www.instagram.com/evan_c19/",
+}
+
+const content = {
+    aboutSummary: "",
+    aboutDescription: "",
+}
+
 const jobExperience = [
     {
         role: "Working Student: Software Developer",
@@ -121,3 +132,16 @@ const skills = {
         "Mandarin"
     ]
 }
+
+const interests = [
+    "🖥️ Tech",
+    "📚 Reading",
+    "🎧 Music",
+    "🎬 Movies",
+    "⚽️ Football",
+    "🧑‍🎨 Graphic Design",
+    "📱 UI/UX",
+    "👨‍💻 Productivity",
+    "☕️ Coffee",
+    "🎨 Art",
+]
