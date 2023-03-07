@@ -1,8 +1,9 @@
 import localFont from '@next/font/local'
-import { ThemeProvider } from 'next-themes'
+import Head from "next/head"
 import NavBar from '@component/components/navbar'
 import './globals.css'
 import Providers from '@component/components/providers'
+import Client from '@component/components/client'
 
 export const metadata = {
   title: 'Evan Christopher',
@@ -38,10 +39,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${workSans.variable} font-sans`}>
+      <Head>
+        <title>Evan Christopher</title>
+        <meta name="description" content="Evan Christopher's personal website" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body>
         <Providers>
           <NavBar />
-          {children}
+          <Client>
+            {children}
+          </Client>
         </Providers>
       </body>
     </html>
