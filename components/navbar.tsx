@@ -25,7 +25,7 @@ export default function NavBar() {
         <div className="hidden items-center justify-center py-2 mr-6 sm:block sm:w-auto">
           <div className="text-md flex">
             <Link href="/about" className={`${pathName == "/about" ? "bg-red-600 text-white hover:text-slate-50" : ""} block my-auto lg:inline-block transition ease-in-out hover:text-red-700 hover:scale-110 rounded-md mr-4`}>
-            <div className="p-1">About</div>
+              <div className="p-1">About</div>
             </Link>
             <Link href="/works" className={`${pathName == "/works" ? "bg-red-600 text-white hover:text-slate-50" : ""} block my-auto lg:inline-block transition ease-in-out hover:text-red-700 hover:scale-110 rounded-md mr-4`}>
               <div className="p-1">Works</div>

@@ -7,7 +7,7 @@ import { ReactNode } from 'react'
 export default function Client({ children }: { children: ReactNode }) {
   const pathname = usePathname()
   return (
-    <AnimatePresence mode='wait' initial={false} onExitComplete={() => window.scrollTo(0, 0)}>
+    // <AnimatePresence mode='wait' initial={false}>
       <motion.div 
         key={pathname}
         initial={{ opacity: 0, y: 25 }}
@@ -16,5 +16,5 @@ export default function Client({ children }: { children: ReactNode }) {
       >
         {children}
       </motion.div>
-    </AnimatePresence>)
+    // </AnimatePresence>)
 }
