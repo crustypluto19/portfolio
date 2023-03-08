@@ -17,4 +17,5 @@ export default function Client({ children }: { children: ReactNode }) {
         {children}
       </motion.div>
     // </AnimatePresence>)
+    )
 }
