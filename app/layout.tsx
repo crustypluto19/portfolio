@@ -3,7 +3,7 @@ import Head from "next/head"
 import NavBar from '@component/components/navbar'
 import './globals.css'
 import Providers from '@component/components/providers'
-import Client from '@component/components/client'
+import PageWrapper from '@component/components/pageWrapper'
 
 export const metadata = {
   title: 'Evan Christopher',
@@ -47,9 +47,9 @@ export default function RootLayout({
       <body>
         <Providers>
           <NavBar />
-          <Client>
+          <PageWrapper>
             {children}
-          </Client>
+          </PageWrapper>
         </Providers>
       </body>
     </html>
