@@ -1,13 +1,14 @@
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { Suspense } from 'react'
+import LogoLoader from './logoLoader'
 import Model from './model'
 
 const Logo3D = () => {
   return (
     <>
         <Canvas shadows>
-            <Suspense fallback={null}>
+            <Suspense fallback={<LogoLoader />}>
                 <PerspectiveCamera makeDefault position={[10, 4, 10]} fov={20} />
                 <mesh receiveShadow>
                     <hemisphereLight intensity={0.15} groundColor='white' />
