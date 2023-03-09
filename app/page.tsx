@@ -17,10 +17,10 @@ export default function Home() {
           <Hero />
         </motion.div>
       </section>
-      <section className='snap-center h-screen w-screen scroll-mt-1.5 bg-yellow-500'>
+      <section className='snap-center h-screen w-screen bg-yellow-500 relative'>
         <AboutHome />
       </section>
-      <section className='snap-center h-screen w-screen scroll-mt-1.5 bg-cyan-300'>
+      <section className='snap-center h-screen w-screen bg-cyan-300 relative'>
         <WorkHome />
       </section>
     </div>
