@@ -64,7 +64,7 @@ const Hero = () => {
             </div>
           </motion.div>
         </div>
-        <div className='flex justify-center items-center w-full sm:w-half-screen h-64 sm:h-half-screen p-4'>
+        <div className='flex justify-center items-center w-full sm:w-half-screen max-h-64 sm:h-half-screen p-4'>
           <Canvas shadows>
             <Suspense fallback={null}>
               <PerspectiveCamera makeDefault position={[10, 10, 20]} fov={60} />
