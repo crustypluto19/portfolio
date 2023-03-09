@@ -1,22 +1,21 @@
 'use client';
 
-import Link from "next/link";
-import Image from 'next/image'
-import { usePathname } from "next/navigation";
-import React from "react";
-import logo from '../public/assets/logo.jpeg'
 import { Menu, Transition } from "@headlessui/react";
+import Image from 'next/image';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import logo from '../public/assets/logo.jpeg';
 import ThemeSwitcher from "./themeswitcher";
 
 export default function NavBar() {
   const pathName = usePathname();
-
+  
   return (
-    <nav className="sticky w-full top-0 z-50 flex items-center justify-between flex-wrap px-6 pr-3 py-3 text-center">
-      <div className="container flex items-center justify-between mx-auto">
-        <Link href="/" className="flex items-center">
-          <Image priority src={logo} alt="Logo" width={50} height={50} className="transition ease-linear hover:scale-105 rounded-lg" />
-          <span className="font-semibold text-xl sm:text-2xl whitespace-nowrap pl-3 transition ease-in-out hover:text-red-700 hover:scale-105">
+    <nav className="sticky w-screen top-0 z-50 flex items-center justify-between flex-wrap px-6 pr-3 py-3 text-center backdrop-blur-md">
+      <div className="container mx-auto flex items-center justify-between">
+        <Link href="/" className="flex items-center transition ease-in-out hover:scale-105 hover:text-red-700 duration-300">
+          <Image priority src={logo} alt="Logo" width={50} height={50} className="rounded-lg" />
+          <span className="font-semibold text-xl sm:text-2xl whitespace-nowrap pl-3">
             Evan Christopher
           </span>
         </Link>
