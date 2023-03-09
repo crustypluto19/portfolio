@@ -30,7 +30,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true, amount: 0.5 }}
           whileInView={{opacity: 1, x: 0}}
-          className='flex flex-col px-2'
+          className='flex flex-col sm:px-2'
         >
           <h1 className='text-lg ml-1'>Hello world! I&#039;m</h1>
           <h1 className='text-5xl sm:text-6xl font-semibold text-rose-700'>
