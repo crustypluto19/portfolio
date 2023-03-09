@@ -11,13 +11,13 @@ export default function Home() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "80%"]);
 
   return (
-    <div ref={ref} className='snap snap-y snap-mandatory h-screen w-screen overflow-x-hidden scrollbar-hide transition ease-in-out duration-500'>
+    <div ref={ref} className='snap snap-y snap-mandatory h-screen w-screen overflow-x-hidden transition ease-in-out duration-500'>
       <section className='snap-center h-screen w-screen'>
         <motion.div style={{ y }}>
           <Hero />
         </motion.div>
       </section>
-      <section className='snap-center h-screen w-screen bg-yellow-500 relative'>
+      <section className='snap-center h-screen w-screen relative'>
         <AboutHome />
       </section>
       <section className='snap-center h-screen w-screen bg-cyan-300 relative'>
