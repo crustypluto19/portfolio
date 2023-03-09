@@ -13,8 +13,13 @@ module.exports = {
       height: {
         'half-screen': '50vh',
       },
+      width: {
+        'half-screen': '50vw',
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ],
   darkMode: 'class',
 }

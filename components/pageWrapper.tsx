@@ -14,7 +14,6 @@ export default function PageWrapper({ children }: { children: ReactNode }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        
         {children}
       </motion.div>
     // </AnimatePresence>

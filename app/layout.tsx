@@ -44,12 +44,12 @@ export default function RootLayout({
         <meta name="description" content="Evan Christopher's personal website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body>
+      <body className='overflow-hidden scroll-smooth'>
         <Providers>
           <NavBar />
-          <PageWrapper>
-            {children}
-          </PageWrapper>
+            <PageWrapper>
+              {children}
+            </PageWrapper>
         </Providers>
       </body>
     </html>
