@@ -20,7 +20,7 @@ export default function Home() {
           <Hero />
         </motion.div>
       </section>
-      <section className={`snap-center h-screen w-screen relative ${ theme === "light" ? "bg-white" : "bg-zinc-900"}`}>
+      <section className="snap-center h-screen w-screen relative bg-rose-700">
         <AboutHome />
       </section>
       <section className={`snap-center h-screen w-screen relative ${ theme === "light" ? "bg-white" : "bg-zinc-900"}`}>

@@ -30,7 +30,7 @@ const Hero = () => {
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, x: 100 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 1 }}
             viewport={{ once: true, amount: 0.5 }}
             whileInView={{opacity: 1, x: 0}}
             className='flex flex-col py-2'
@@ -38,11 +38,25 @@ const Hero = () => {
             <h1 className='text-lg'>Hello world! I&apos;m</h1>
             <h2 className='text-5xl sm:text-8xl font-semibold flex flex-col'>
               <div className='flex flex-row'>
-                <motion.div className='text-rose-700' >E</motion.div>
+                <motion.div
+                  initial={{ scale: 0.9 }}
+                  transition={{ duration: 0.8, delay: 1.5 }}
+                  whileInView={{ scale: 1.1 }}
+                  className='text-red-700 scale-110'
+                >
+                  E
+                </motion.div>
                 van
               </div>
               <div className='flex flex-row'>
-                <motion.div className='text-rose-700'>C</motion.div>
+                <motion.div
+                  initial={{ scale: 0.9 }}
+                  transition={{ duration: 0.8, delay: 2 }}
+                  whileInView={{ scale: 1.1 }}
+                  className='text-red-700 scale-110'
+                >
+                  C
+                </motion.div>
                 hristopher
               </div>
             </h2>
@@ -58,7 +72,7 @@ const Hero = () => {
             <div className='flex justify-end sm:justify-start items-end py-4'>
               <motion.div
                 whileHover={{ scale: [null, 1.5, 1.4] }}
-                transition={{ duration: 0.3, delay: 1 }}
+                transition={{ duration: 0.3 }}
               >
                 <button type="button" className="font-semibold text-md text-red-700 hover:text-white border border-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 rounded-lg px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-100 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-700 transition-colors duration-300">
                     <Link href="/contact">
