@@ -13,9 +13,9 @@ const AboutHome = () => {
         className='text-4xl sm:text-6xl pb-5 sm:pb-10 tracking-wider leading-normal'
       >
         {/* <RoughNotation type='underline' color='red' strokeWidth={5} show={true}> Evan </RoughNotation>  */}
-        I'm Evan and I like to build things.
+        I&apos;m Evan and I like to build things.
       </motion.div>
-      <div className='text-2xl'>I'm an aspiring software engineer and a working student studying in Munich. Creating has always been my passion - whether it be applications or pictures. </div>
+      <div className='text-2xl'>I&apos;m an aspiring software engineer and a working student studying in Munich. Creating has always been my passion - whether it be applications or pictures. </div>
     </div>
   )
 }

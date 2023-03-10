@@ -35,7 +35,7 @@ const Hero = () => {
             whileInView={{opacity: 1, x: 0}}
             className='flex flex-col py-2'
           >
-            <h1 className='text-lg'>Hello world! I'm</h1>
+            <h1 className='text-lg'>Hello world! I&apos;m</h1>
             <h2 className='text-5xl sm:text-8xl font-semibold flex flex-col'>
               <div className='flex flex-row'>
                 <motion.div className='text-rose-700' >E</motion.div>
