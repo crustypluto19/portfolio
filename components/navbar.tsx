@@ -11,7 +11,7 @@ export default function NavBar() {
   const pathName = usePathname();
   
   return (
-    <nav className="sticky w-screen top-0 z-50 flex items-center justify-between flex-wrap px-6 pr-3 py-1.5 sm:py-3 text-center backdrop-blur-md">
+    <nav className="sticky w-screen top-0 z-50 flex items-center justify-between flex-wrap px-6 pr-3 py-1.5 sm:py-3 text-center backdrop-blur-md bg-inherit">
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center transition ease-in-out hover:scale-105 hover:text-red-700 duration-300">
           <div className='relative shrink-0 h-12 w-12'>
