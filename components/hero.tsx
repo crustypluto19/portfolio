@@ -1,9 +1,10 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, MotionStyle, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRef } from 'react'
 import { Typewriter } from 'react-simple-typewriter'
 import heroPic from '../public/assets/evanc.webp'
+import content from '../data/content.js'
 import Logo3D from './logo3D'
 
 const Hero = () => {
@@ -29,36 +30,42 @@ const Hero = () => {
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, x: 100 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true, amount: 0.5 }}
             whileInView={{opacity: 1, x: 0}}
             className='flex flex-col py-2'
           >
-            <h1 className='text-lg'>Hello world! I&#039;m</h1>
-            <h2 className='text-5xl sm:text-6xl font-semibold text-rose-700'>
-              Evan Christopher
+            <h1 className='text-lg'>Hello world! I'm</h1>
+            <h2 className='text-5xl sm:text-8xl font-semibold flex flex-col'>
+              <div className='flex flex-row'>
+                <motion.div className='text-rose-700' >E</motion.div>
+                van
+              </div>
+              <div className='flex flex-row'>
+                <motion.div className='text-rose-700'>C</motion.div>
+                hristopher
+              </div>
             </h2>
             <div className='text-xl max-w-lg h-10'>
               <Typewriter
-                words={[
-                  "Information Systems student (B.Sc) @TUM",
-                  'working student @Siemens',
-                  'software engineer',
-                ]}
-                loop={3}
+                words={content.content.heroWords}
                 cursor
-                cursorBlinking
-                typeSpeed={30}
-                deleteSpeed={30}
+                typeSpeed={20}
+                deleteSpeed={20}
                 delaySpeed={1500}
               />
             </div>
             <div className='flex justify-end sm:justify-start items-end py-4'>
-              <button className="text-xl w-48 bg-gradient-to-tr from-red-800 to-rose-400 hover:scale-110 transition ease-linear duration-200 text-white font-bold py-2 px-4 mr-4 rounded-xl">
-                <Link href="/contact">
-                  Contact
-                </Link>
-              </button>
+              <motion.div
+                whileHover={{ scale: [null, 1.5, 1.4] }}
+                transition={{ duration: 0.3, delay: 1 }}
+              >
+                <button type="button" className="font-semibold text-md text-red-700 hover:text-white border border-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 rounded-lg px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-100 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-700 transition-colors duration-300">
+                    <Link href="/contact">
+                      Contact Me!
+                    </Link>
+                </button>
+              </motion.div>
             </div>
           </motion.div>
         </div>

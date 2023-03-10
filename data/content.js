@@ -3,15 +3,22 @@ const userData = {
     address: "Munich, Germany",
 }
 
+const content = {
+    heroWords: [
+        "",
+        "Information Systems student (B.Sc) @TUM",
+        'working student @Siemens',
+        'software engineer',
+        'idea realizer.'
+    ],
+    aboutHomePunchline: "I'm Evan and I like to build things.",
+    aboutHome: "I'm an aspiring software engineer and a working student studying in Munich. Creating has always been my passion - whether it be applications or photos. "
+}
+
 const socialLinks = {
     github: "https://github.com/crustypluto19",
     linkedin: "https://www.linkedin.com/in/christopher-evan/",
     instagram: "https://www.instagram.com/evan_c19/",
-}
-
-const content = {
-    aboutSummary: "",
-    aboutDescription: "",
 }
 
 const jobExperience = [
@@ -145,3 +152,13 @@ const interests = [
     "☕️ Coffee",
     "🎨 Art",
 ]
+
+module.exports = {
+    userData,
+    content,
+    socialLinks,
+    jobExperience,
+    projects,
+    skills,
+    interests
+}
