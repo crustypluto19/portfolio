@@ -18,7 +18,7 @@ const Hero = () => {
       ref={ref}
     >
       <motion.div className='container flex flex-col-reverse md:flex-row p-6' style={{ y }}>
-        <div className='relative flex flex-wrap w-full'>
+        <div className='relative flex flex-col w-full'>
           <motion.div 
             initial={{ scale: 0.9 }}
             transition={{ duration: 0.8, delay: 0.6 }}

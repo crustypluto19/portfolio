@@ -1,10 +1,12 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { RoughNotation } from 'react-rough-notation'
+import { useTheme } from 'next-themes'
 
 const AboutHome = () => {
+
   return (
-    <div className='container mx-auto flex flex-col justify-center items-start h-screen w-screen relative p-6 bg-inherit'>
+    <div className="container mx-auto flex flex-col justify-center items-start h-screen w-screen relative p-6">
       <motion.div 
         initial={{ scale: 0.9 }}
         transition={{ duration: 0.8 }}
