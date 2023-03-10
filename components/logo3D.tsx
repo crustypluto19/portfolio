@@ -9,8 +9,8 @@ const Logo3D = () => {
     <>
         <Canvas shadows>
             <Suspense fallback={<LogoLoader />}>
-                <PerspectiveCamera makeDefault position={[10, 4, 10]} fov={20} />
-                <mesh receiveShadow>
+                <PerspectiveCamera makeDefault position={[10, 8, 20]} fov={8} />
+                <mesh receiveShadow position={[0, 0, -5]}>
                     <hemisphereLight intensity={0.15} groundColor='white' />
                     <directionalLight castShadow intensity={1}  />
                     <spotLight

@@ -5,7 +5,7 @@ const userData = {
 
 const content = {
     heroWords: [
-        "",
+        "", "",
         "Information Systems student (B.Sc) @TUM",
         'working student @Siemens',
         'software engineer',

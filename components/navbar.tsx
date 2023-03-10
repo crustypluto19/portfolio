@@ -11,9 +11,9 @@ export default function NavBar() {
   const pathName = usePathname();
   
   return (
-    <nav className="sticky w-screen top-0 z-50 flex items-center justify-between flex-wrap px-6 pr-3 py-1.5 sm:py-3 text-center backdrop-blur-md bg-inherit">
+    <nav className="sticky w-screen top-0 z-50 flex items-center justify-between flex-wrap px-6 pr-3 py-1.5 sm:py-3 text-center backdrop-blur-lg">
       <div className="container mx-auto flex items-center justify-between">
-        <Link href="/" className="flex items-center transition ease-in-out hover:scale-105 hover:text-red-700 duration-300">
+        <Link href="/" className="flex items-center transition ease-in-out hover:scale-105 hover:text-rose-700 duration-300">
           <div className='relative shrink-0 h-12 w-12'>
             <Image priority src={logo} alt="Logo" fill className="rounded-lg" />
           </div>
@@ -25,13 +25,13 @@ export default function NavBar() {
         <div className="flex flex-row">
         <div className="hidden items-center justify-center py-2 mr-6 sm:block sm:w-auto">
           <div className="text-md flex">
-            <Link href="/about" className={`${pathName == "/about" ? "bg-red-600 text-white hover:text-slate-50" : ""} block my-auto lg:inline-block transition ease-in-out hover:text-red-700 hover:scale-110 rounded-md mr-4`}>
+            <Link href="/about" className={`${pathName == "/about" ? "bg-rose-600 text-white hover:text-slate-50" : ""} block my-auto lg:inline-block transition ease-in-out hover:text-red-700 hover:scale-110 rounded-md mr-4`}>
               <div className="p-1">About</div>
             </Link>
-            <Link href="/works" className={`${pathName == "/works" ? "bg-red-600 text-white hover:text-slate-50" : ""} block my-auto lg:inline-block transition ease-in-out hover:text-red-700 hover:scale-110 rounded-md mr-4`}>
+            <Link href="/works" className={`${pathName == "/works" ? "bg-rose-600 text-white hover:text-slate-50" : ""} block my-auto lg:inline-block transition ease-in-out hover:text-red-700 hover:scale-110 rounded-md mr-4`}>
               <div className="p-1">Works</div>
             </Link>
-            <Link href="/contact" className={`${pathName == "/contact" ? "bg-red-600 text-white hover:text-slate-50" : ""} block my-auto lg:inline-block transition ease-in-out hover:text-red-700 hover:scale-110 rounded-md mr-4`}>
+            <Link href="/contact" className={`${pathName == "/contact" ? "bg-rose-600 text-white hover:text-slate-50" : ""} block my-auto lg:inline-block transition ease-in-out hover:text-red-700 hover:scale-110 rounded-md mr-4`}>
               <div className="p-1">Contact</div>
             </Link>
           </div>

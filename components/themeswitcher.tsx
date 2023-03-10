@@ -39,7 +39,7 @@ const ThemeSwitcher = () => {
                         setTheme(theme === 'light' ? 'dark' : 'light')
                     }}
                     className={`${
-                        enabled ? 'bg-red-600' : 'bg-zinc-300'
+                        enabled ? 'bg-rose-600' : 'bg-zinc-300'
                     } relative inline-flex h-8 w-14 items-center rounded-full transition-colors ring-1 ring-zinc-400 focus:outline-none focus:ring-2 focus:ring-rose-400 focus:ring-offset-2`}
                 >
                     <span

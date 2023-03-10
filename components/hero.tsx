@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRef } from 'react'
 import { Typewriter } from 'react-simple-typewriter'
-import heroPic from '../public/assets/evanc.webp'
 import content from '../data/content.js'
 import Logo3D from './logo3D'
 
@@ -20,28 +19,16 @@ const Hero = () => {
       <motion.div className='container flex flex-col-reverse md:flex-row p-6' style={{ y }}>
         <div className='relative flex flex-col w-full'>
           <motion.div 
-            initial={{ scale: 0.9 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true, amount: 1 }}
-            whileInView={{opacity: 1, scale: 1 }}
-            className='relative w-24 h-28 sm:w-36 sm:h-40 shrink-0'
-          >
-            <Image src={heroPic} alt='Evan Christopher' fill className="rounded-lg border-2 bg-zinc-900" />        
-          </motion.div>
-          <motion.div 
-            initial={{ opacity: 0, x: 100 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            viewport={{ once: true, amount: 0.5 }}
-            whileInView={{opacity: 1, x: 0}}
+            variants={container}
+            initial='hidden'
+            animate='show'
             className='flex flex-col py-2'
           >
-            <h1 className='text-lg'>Hello world! I&apos;m</h1>
-            <h2 className='text-5xl sm:text-8xl font-semibold flex flex-col'>
+            <motion.h1 variants={animateHello} className='text-lg'>Hello world! I&apos;m</motion.h1>
+            <motion.h2 variants={animateName} className='text-6xl sm:text-9xl font-semibold flex flex-col'>
               <div className='flex flex-row'>
                 <motion.div
-                  initial={{ scale: 0.9 }}
-                  transition={{ duration: 0.8, delay: 1.5 }}
-                  whileInView={{ scale: 1.1 }}
+                  variants={animateEC}
                   className='text-rose-700 scale-110'
                 >
                   E
@@ -50,31 +37,30 @@ const Hero = () => {
               </div>
               <div className='flex flex-row'>
                 <motion.div
-                  initial={{ scale: 0.9 }}
-                  transition={{ duration: 0.8, delay: 2 }}
-                  whileInView={{ scale: 1.1 }}
+                  variants={animateEC}
                   className='text-rose-700 scale-110'
                 >
                   C
                 </motion.div>
                 hristopher
               </div>
-            </h2>
-            <div className='text-xl max-w-lg h-10'>
+            </motion.h2>
+            <motion.div variants={animateTypeWriter} className='text-xl max-w-lg h-10 my-3 sm:my-4'>
               <Typewriter
                 words={content.content.heroWords}
                 cursor
-                typeSpeed={20}
+                typeSpeed={30}
                 deleteSpeed={20}
-                delaySpeed={1500}
+                delaySpeed={1750}
               />
-            </div>
-            <div className='flex justify-end sm:justify-start items-end py-4'>
+            </motion.div>
+            <div className='flex sm:justify-start sm:items-start items-end justify-end py-4'>
               <motion.div
+              variants={animateContact}
                 whileHover={{ scale: [null, 1.5, 1.4] }}
                 transition={{ duration: 0.3 }}
               >
-                <button type="button" className="font-semibold text-md text-white hover:text-white border hover:bg-rose-700 border-white hover:white focus:ring-4 focus:outline-none focus:ring-red-300 rounded-lg px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-100 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-700 transition-colors duration-300">
+                <button type="button" className="text-xl sm:text-3xl text-white hover:text-white border hover:bg-rose-700 border-white hover:white focus:ring-4 focus:outline-none focus:ring-red-300 rounded-lg px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-100 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-700 transition-colors duration-300">
                     <Link href="/contact">
                       Contact Me!
                     </Link>
@@ -83,7 +69,7 @@ const Hero = () => {
             </div>
           </motion.div>
         </div>
-        <div className='flex justify-center items-center w-full h-[36vh] sm:h-half-screen p-4'>
+        <div className='flex justify-start items-start w-full h-[40vh] sm:h-half-screen p-4'>
           <Logo3D />
       </div>
       </motion.div>
@@ -94,6 +80,70 @@ const Hero = () => {
       </div> */}
     </motion.div>
   )
+}
+
+const container = {
+  hidden: { x: 100, opacity: 0 },
+  show: {
+      x: 0,
+      opacity: 1,
+      transition: {
+          staggerChildren: 1,
+          delayChildren: 1,
+          duration: 0.8,
+      },
+  },
+}
+
+const animateHello = {
+  hidden: { x: 100, opacity: 0 },
+  show: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.8 },
+},
+}
+
+const animateEC = {
+  hidden: { scale: 0.9 },
+  show: { 
+    scale: 1.1,
+    transition: { duration: 1 }
+  },
+}
+
+const animateName = {
+  hidden: {
+    x: -100,
+    opacity: 0,
+  },
+  show: { 
+    x: 0,
+    opacity: 1,
+    rotate: [0, 10, -10, 0],
+    transition: { 
+      type:"spring",
+      bounce:0.4,
+      duration: 1.5 
+    }
+  },
+}
+
+const animateTypeWriter = {
+  hidden: { x: 10 },
+  show: {
+    x: 0,
+    transition: { duration: 1 },
+  },
+}
+
+const animateContact = {
+  hidden: { x: -100, opacity: 0 },
+  show: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 1 },
+  },
 }
 
 export default Hero

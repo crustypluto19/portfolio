@@ -14,7 +14,7 @@ export default function Home() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   return (
-    <div ref={ref} className='snap snap-y snap-mandatory h-screen w-screen overflow-x-hidden transition ease-in-out duration-500 scrollbar-hide'>
+    <div ref={ref} className='snap snap-y snap-proximity h-screen w-screen overflow-x-hidden scrollbar-hide'>
       <section className={`snap-center h-screen w-screen relative object-cover ${ theme === "light" ? "bg-[url('../public/assets/hero-pattern-light.svg')]" : "bg-[url('../public/assets/hero-pattern.svg')]"}`}>
         <motion.div style={{ y }}>
           <Hero />
