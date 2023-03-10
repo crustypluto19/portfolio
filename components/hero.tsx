@@ -1,5 +1,4 @@
-import { motion, MotionStyle, useScroll, useTransform } from 'framer-motion'
-import Image from 'next/image'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
 import { useRef } from 'react'
 import { Typewriter } from 'react-simple-typewriter'
