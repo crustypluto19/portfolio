@@ -15,11 +15,18 @@ export default function Home() {
 
   return (
     <div ref={ref} className='snap snap-y snap-proximity h-screen w-screen overflow-x-hidden scrollbar-hide'>
-      <section className={`snap-center h-screen w-screen relative object-cover ${ theme === "light" ? "bg-[url('../public/assets/hero-pattern-light.svg')]" : "bg-[url('../public/assets/hero-pattern.svg')]"}`}>
+      <div className={`${ theme === "light" ? "bg-[url('../public/assets/hero-pattern-light.svg')]" : "bg-[url('../public/assets/wave-long.svg')]"} overflow-hidden`}>
+        <section className='snap-center h-screen w-screen relative object-cover '>
+          <motion.div style={{ y }}>
+            <Hero />
+          </motion.div>
+        </section>
+      </div>
+      {/* <section className={`snap-center h-screen w-screen relative object-cover ${ theme === "light" ? "bg-[url('../public/assets/hero-pattern-light.svg')]" : "bg-[url('../public/assets/hero-pattern.svg')]"} animate-wave`}>
         <motion.div style={{ y }}>
           <Hero />
         </motion.div>
-      </section>
+      </section> */}
       <section className="snap-center h-screen w-screen relative bg-rose-700">
         <AboutHome />
       </section>
