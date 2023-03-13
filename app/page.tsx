@@ -15,19 +15,12 @@ export default function Home() {
 
   return (
     <div ref={ref} className='snap snap-y snap-proximity h-screen w-screen overflow-x-hidden scrollbar-hide'>
-      <div className={`${ theme === "light" ? "bg-[url('../public/assets/hero-pattern-light.svg')]" : "bg-[url('../public/assets/wave-long.svg')]"} overflow-hidden`}>
-        <section className='snap-center h-screen w-screen relative object-cover '>
-          <motion.div style={{ y }}>
-            <Hero />
-          </motion.div>
-        </section>
-      </div>
-      {/* <section className={`snap-center h-screen w-screen relative object-cover ${ theme === "light" ? "bg-[url('../public/assets/hero-pattern-light.svg')]" : "bg-[url('../public/assets/hero-pattern.svg')]"} animate-wave`}>
+      <section className={`snap-center h-screen w-screen relative object-cover ${ theme === "light" ? "bg-[url('../public/assets/wave-long-light.svg')]" : "bg-[url('../public/assets/wave-long.svg')]"} overflow-hidden`}>
         <motion.div style={{ y }}>
           <Hero />
         </motion.div>
-      </section> */}
-      <section className="snap-center h-screen w-screen relative bg-rose-700">
+      </section>
+      <section className="snap-center h-screen w-screen relative bg-rose-700 pt-10">
         <AboutHome />
       </section>
       <section className={`snap-center h-screen w-screen relative ${ theme === "light" ? "bg-white" : "bg-zinc-900"}`}>
