@@ -1,9 +1,9 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
-import Link from 'next/link'
 import { useRef } from 'react'
 import { Typewriter } from 'react-simple-typewriter'
 import content from '../data/content.js'
 import Logo3D from './logo3D'
+import { AiFillInstagram, AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 
 const Hero = () => {
   const ref = useRef(null);
@@ -23,12 +23,12 @@ const Hero = () => {
             animate='show'
             className='flex flex-col py-2'
           >
-            <motion.h1 variants={animateHello} className='text-lg'>Hello world! I&apos;m</motion.h1>
+            <motion.h1 variants={animateHello} className='text-lg ml-1'>Hello world! I&apos;m</motion.h1>
             <motion.h2 variants={animateName} className='text-6xl sm:text-9xl font-semibold flex flex-col'>
               <div className='flex flex-row'>
                 <motion.div
                   variants={animateEC}
-                  className='text-rose-700 scale-110'
+                  className='text-rose-700'
                 >
                   E
                 </motion.div>
@@ -44,7 +44,7 @@ const Hero = () => {
                 hristopher
               </div>
             </motion.h2>
-            <motion.div variants={animateTypeWriter} className='text-xl max-w-lg h-10 my-3 sm:my-4'>
+            <motion.div variants={animateTypeWriter} className='text-xl max-w-lg h-10 my-3 sm:my-4 ml-1'>
               <Typewriter
                 words={content.content.heroWords}
                 cursor
@@ -53,39 +53,31 @@ const Hero = () => {
                 delaySpeed={1750}
               />
             </motion.div>
-            <div className='flex sm:justify-start sm:items-start items-end justify-end py-4'>
-              <motion.div
-              variants={animateContact}
-                whileHover={{ scale: [null, 1.5, 1.4] }}
-                transition={{ duration: 0.3 }}
-              >
-                <button type="button" className="text-xl sm:text-3xl text-white hover:text-white border hover:bg-rose-700 border-white hover:white focus:ring-4 focus:outline-none focus:ring-red-300 rounded-lg px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-100 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-700 transition-colors duration-300">
-                    <Link href="/contact">
-                      Contact Me!
-                    </Link>
-                </button>
-              </motion.div>
-            </div>
+            <motion.div variants={animateSocialLinks} className='flex sm:justify-start sm:items-start items-end justify-end py-4'>
+              <div className="flex justify-center space-x-6">
+                <a href={content.socialLinks.linkedin} target="_blank" rel="noreferrer">
+                  <AiFillLinkedin className="text-4xl sm:text-5xl hover:scale-110 hover:text-current hover:shadow-xl shadow-black transition linear duration-300 rounded-md" />
+                </a>
+                <a href={content.socialLinks.github} target="_blank" rel="noreferrer">
+                  <AiFillGithub className="text-4xl sm:text-5xl hover:scale-110 hover:text-current hover:shadow-xl shadow-black transition linear duration-300 rounded-md" />
+                </a>
+                <a href={content.socialLinks.instagram} target="_blank" rel="noreferrer">
+                  <AiFillInstagram className="text-4xl sm:text-5xl hover:scale-110 hover:text-current hover:shadow-xl shadow-black transition linear duration-300 rounded-md" />
+                </a>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
         <div className='flex justify-start items-start w-full h-[40vh] sm:h-half-screen p-4'>
           <Logo3D />
-      </div>
+        </div>
       </motion.div>
-      {/* <div className='absolute blur backdrop-blur-xl w-full h-full'>
-        <video autoPlay loop muted playsInline className='absolute w-full h-full object-center z-0'>
-          <source src='/assets/hero.mp4' type='video/mp4' />
-        </video>
-      </div> */}
     </motion.div>
   )
 }
 
 const container = {
-  hidden: { x: 100, opacity: 0 },
   show: {
-      x: 0,
-      opacity: 1,
       transition: {
           staggerChildren: 1,
           delayChildren: 1,
@@ -106,8 +98,8 @@ const animateHello = {
 const animateEC = {
   hidden: { scale: 0.9 },
   show: { 
-    scale: 1.1,
-    transition: { duration: 1 }
+    scale: 1,
+    transition: { duration: 1, delay: 1.5 }
   },
 }
 
@@ -119,24 +111,24 @@ const animateName = {
   show: { 
     x: 0,
     opacity: 1,
-    rotate: [0, 10, -10, 0],
+    rotate: [0, -5, 5, 0],
     transition: { 
       type:"spring",
-      bounce:0.4,
+      bounce: 0.4,
       duration: 1.5 
     }
   },
 }
 
 const animateTypeWriter = {
-  hidden: { x: 10 },
+  hidden: { x: -100 },
   show: {
     x: 0,
     transition: { duration: 1 },
   },
 }
 
-const animateContact = {
+const animateSocialLinks = {
   hidden: { x: -100, opacity: 0 },
   show: {
     x: 0,
